@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DataTablesModule } from 'angular-datatables';
 
 // Rutas
 import { APP_ROUTES } from './app.routes';
 
 //Temporal
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // Modulos
@@ -21,6 +22,7 @@ import { IncrementadorComponent } from './components/incrementador/incrementador
 import { LoginComponent } from './login/login.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { CommonModule } from '@angular/common';
+import { RegisterComponent } from './login/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { CommonModule } from '@angular/common';
     IncrementadorComponent,
     LoginComponent,
     DemoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { CommonModule } from '@angular/common';
     PagesModule,
     ServiceModule,
     FormsModule,
-    CommonModule 
+    ReactiveFormsModule,
+    CommonModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

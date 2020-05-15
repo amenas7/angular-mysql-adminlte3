@@ -1,1 +1,27 @@
-<p>demo works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title"> Cantidad de registros ( <small> 123</small> )</h3>
+
+                <table datatable [dtOptions]="dtOptions" class="table table-bordered table-hover">
+                    <thead style="font-weight: bold;">
+                        <tr>
+                            <th>DOI</th>
+                            <th>Nombre</th>
+                            <th width="100">F. Ingreso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let member of Members">
+                            <td>{{ member.nombre }}</td>
+                            <td>{{ member.correo }}</td>
+                            <td>{{ member.password }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

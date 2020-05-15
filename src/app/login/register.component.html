@@ -1,0 +1,75 @@
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="../../index2.html"><b> Demo Registro</b></a>
+        </div>
+
+        <div class="card">
+            <div class="card-body register-card-body">
+                <!-- <p class="login-box-msg">Register a new membership</p> -->
+
+                <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarUsuario()" method="post">
+                    <div class="input-group mb-3">
+                        <input formControlName="nombre" name="nombre" type="text" required autocomplete="off" class="form-control" style="border: 1px solid #334633;" placeholder="Nombre completo">
+                        <div class="input-group-append">
+                            <div style="border: 1px solid #334633" class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input formControlName="correo" name="correo" type="text" required autocomplete="off" class="form-control" style="border: 1px solid #334633;" placeholder="correo">
+                        <div class="input-group-append">
+                            <div style="border: 1px solid #334633;" class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input formControlName="password" name="password" type="password" class="form-control" style="border: 1px solid #334633;" placeholder="Password">
+                        <div class="input-group-append">
+                            <div style="border: 1px solid #334633;" class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input formControlName="password2" name="password2" type="password" class="form-control" style="border: 1px solid #334633;" placeholder="Re password">
+                        <div class="input-group-append">
+                            <div style="border: 1px solid #334633;" class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                        <p class="text-danger" style="text-align: center;background-color: #E7302C; font-weight: bold;">
+                            <span style="color:white;padding: 5px;">Las contraseñas deben de se iguales</span>
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="icheck-primary">
+                                <input formControlName="condiciones" name="condiciones" type="checkbox" id="agreeTerms" value="agree">
+                                <label for="agreeTerms">
+                                 Acepto <a href="#">terms</a>
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">REGISTRAR</button>
+                        </div>
+
+                    </div>
+                </form>
+                <br>
+                <a routerLink="/login" class="text-center"> Tengo una cuenta </a>
+            </div>
+            <!-- /.form-box -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+</body>

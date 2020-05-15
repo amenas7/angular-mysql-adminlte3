@@ -14,7 +14,10 @@
                 <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a *ngFor="let menu of variable" href="#" class="d-block"> {{menu.titulo}} </a>
+                <!-- <ol>
+                    <li> <a>{{_sidebar[0].menu.titulo}}</a> </li>
+                </ol> -->
             </div>
         </div>
 
@@ -22,13 +25,13 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li *ngFor="let menu of _sidebar.menu" class="nav-item has-treeview">
+                <li *ngFor="let menu of variable" class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             {{menu.titulo}}
                             <i class="fas fa-angle-left right"></i>
-                            <!-- <span class="badge badge-info right">6</span> -->
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -39,50 +42,18 @@
                                 <p> {{submenu.titulo}}</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation + Sidebar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Boxed</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Sidebar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-topnav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Navbar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-footer.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Footer</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/collapsed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Collapsed Sidebar</p>
-                            </a>
-                        </li> -->
+
                     </ul>
+                    <ol>
+
+                    </ol>
                 </li>
 
                 <li class="nav-header">LABELS</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a (click)="_usuarioService.logout()" style="cursor: pointer;" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
-                        <p class="text">Important</p>
+                        <p class="text">Cerrar Sesión</p>
                     </a>
                 </li>
                 <li class="nav-item">

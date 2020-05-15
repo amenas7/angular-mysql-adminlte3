@@ -3,17 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from "@angular/forms";
 
-import { SidebarService, SharedService } from "./service.index";
+import { 
+  SidebarService,
+  SharedService,
+  UsuarioService,
+  LoginGuardGuard
+} from "./service.index";
+import { HttpClientModule } from '@angular/common/http';
+
  
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     SidebarService,
-    SharedService 
+    SharedService,
+    UsuarioService,
+    LoginGuardGuard
+    
   ],
 })
 export class ServiceModule { }
